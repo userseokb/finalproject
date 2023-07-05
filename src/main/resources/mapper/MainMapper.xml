@@ -7,10 +7,10 @@
    
    
    	<!-- getProduct -->
-	<select id="getAllProducts" 
+	<select id="getAllProduct" 
 			resultType="com.team2.finalproject.dto.product.ProductDto">
 		SELECT product_code, category_code, name, content, price, stock, rdate 
-		FROM notice
+		FROM product
 	</select>
    
     </mapper>
