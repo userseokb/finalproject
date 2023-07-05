@@ -12,12 +12,12 @@
      <!-- Bootstrap icons-->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
      <!-- Core theme CSS (includes Bootstrap)-->
-     <link href="css/styles.css" rel="stylesheet" />
-     <link href="css/traditional-main.css" rel="stylesheet" />
+     <link href="../resources/css/styles.css" rel="stylesheet" />
+     <link href="../resources/css/traditional-main.css" rel="stylesheet" />
 </head>
 <body>
     <%@ include file="mainNav.jsp" %>
-
+	
     <main>
         <div class="main-container">
             <h4>공지사항</h4>
@@ -30,13 +30,15 @@
                     <th>조회수</th>
                 </tr>
                 <!-- c태그 반복영역 -->
+                <c:forEach items="${notice}" var="notice">
                 <tr>
-                    <td>0001</td>
-                    <td><a href="">test title</a></td>
-                    <td>yyyy-mm-dd</td>
+                    <td>${notice.noticeNo}</td>
+                    <td><a href="notice/${notice.noticeNo}">${notice.title}</a></td>
+                    <td>${notice.writeDate }</td>
                     <td>관리자</td>
-                    <td>0</td>
+                    <td>${notice.kinds}</td>
                 </tr>
+                </c:forEach>
                 <!-- 반복 종료 -->
             </table>
         </div>
