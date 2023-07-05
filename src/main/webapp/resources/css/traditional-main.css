@@ -242,3 +242,27 @@ td label{
 td label:not(:first-child){
     padding-left:  0.5rem;
 }
+
+
+/* 공지사항,FAQ */
+.main-container{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 1280px;
+    margin: 1rem auto;
+}
+
+.main-table{
+    width:100%;
+    border:1px solid #e5e5e5;
+    border-collapse: collapse;
+}
+
+.main-table tr th,td{
+    border: 1px solid #e5e5e5;
+    padding:1rem;
+}
+.main-table tr:nth-child(2n+1){
+    background-color: rgb(248 249 250);
+}
