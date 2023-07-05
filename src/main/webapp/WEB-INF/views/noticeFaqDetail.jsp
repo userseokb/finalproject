@@ -13,8 +13,8 @@
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
-    <link href="css/traditional-main.css" rel="stylesheet" />
+    <link href="../resources/css/styles.css" rel="stylesheet" />
+    <link href="../resources/css/traditional-main.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -22,28 +22,27 @@
 
     <main>
         <div class="main-container">
-            <h4>공지사항orFAQ</h4>
+            <c:if test="${!empty notice}">
+			<h4>공지사항</h4>            
+            </c:if>
+            <c:if test="${!empty faq}">
+			<h4>FAQ</h4>            
+            </c:if>
             <table class="main-table">
                 <tr>
                     <th>제목</th>
-                    <td colspan="2">test title</td>
+                    <td colspan="2">${notice.title}</td>
                 </tr>
                 <tr>
-                    <th>작성자</th>
-                    <th>작성일자 : yyyy-mm-dd</th>
-                    <th>조회수 : </th>
+                    <th>작성자 : 관리자</th>
+                    <th>작성일자 : ${notice.writeDate}</th>
+                    <th>조회수 : ${notice.kinds}</th>
                 </tr>
-                <!-- c태그 반복영역 -->
                 <tr>
                     <td colspan="3">
-                        공지,FAQ내용<br>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus odio molestiae optio provident.
-                        Aspernatur odit unde nesciunt. Aperiam earum possimus accusantium odit, eligendi fuga repellat
-                        consequatur quam, rerum asperiores quaerat consequuntur illo maiores ex, unde veniam totam
-                        distinctio et soluta.
-                        </tf>
+                        ${notice.content}
+                     </td>
                 </tr>
-                <!-- 반복 종료 -->
             </table>
             <div>
                 <input type="button" value="목록으로" class="change-option-btn float-right" onclick="history.back()">
