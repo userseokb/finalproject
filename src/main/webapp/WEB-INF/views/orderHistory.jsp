@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,68 +18,16 @@
 </head>
 
 <body onload="deliveryStatus()">
-    <!-- 상단 Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="#!">
-                <img src="image/logo.png" alt="logo" width="110px">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#!">All Products</a></li>
-                            <li>
-                                <hr class="dropdown-divider" />
-                            </li>
-                            <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                            <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <button class="btn btn-outline-dark" onclick="location.href='login.html'">
-                    <i class="bi-person-circle"></i>
-                    로그인
-                </button>
-            </div>
-        </div>
-    </nav>
-
-
+    <%@ include file="mainNav.jsp" %>
+    
     <!-- 중앙 메인 컨테이너 -->
     <div class="mypage-container">
-        <!-- 좌측 사이드바 -->
-        <div class="mypage-sidebar">
-            <div class="user-private-info">
-                <ul class="sidebar-grade">
-                    <li>등급 : </li>
-                    <li>다음등급까지 :</li>
-                </ul>
-            </div>
-            <ul class="sidebar-nav">
-                <li><a href="mypage.html">마이 페이지</a></li>
-                <li><a href="personalInfomation.html">회원 정보 변경</a></li>
-                <li><a href="orderHistory.html">주문 내역 조회<br>및 리뷰 작성</a></li>
-                <li><a href="">Q&A(1:1문의)</a></li>
-            </ul>
-        </div>
+       <%@ include file="mypageSidebar.jsp" %>
 
         <!-- 사이드바 제외 영역 -->
         <div class="mypage-content">
 
-            <!-- 상단 마이페이지 헤더 -->
-            <div class="mypage-header">
-                <div></div>
-                <div><a href=""><i class="bi-cart"></i> 장바구니 : </a></div>
-                <div><a href=""><i class="bi-cash-stack"></i> 포인트 : </a></div>
-            </div>
+            <%@ include file="mypageHeader.jsp" %>
 
             <!-- 마이페이지 컨텐츠 영역 -->
             <div class="mypage-content-detail">
@@ -120,12 +69,7 @@
         </div>
     </div>
 
-    <!-- Footer-->
-    <footer class="py-5 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Korea Traditional 2023</p>
-        </div>
-    </footer>
+	<%@ include file="mainFooter.jsp" %>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
