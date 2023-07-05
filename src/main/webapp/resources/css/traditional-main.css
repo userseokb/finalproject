@@ -1,0 +1,97 @@
+.login-header{
+    display: flex;
+    margin:10vh auto 3vh;
+}
+.navbar-brand{
+    margin:0 auto;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid rgb(33, 37, 41);
+    border-radius: 10px;
+    width: 460px;
+    margin: 0 auto 5vh;
+    padding: 3vh;
+}
+
+.input-wrap{
+    border:1px solid rgb(33, 37, 41);
+    border-radius: 10px;
+    width: 100%;
+}
+.input-wrap div{
+    padding: 0.5vh 1vh;
+}
+.input-wrap div:not(:last-child){
+    border-bottom: 1px solid rgb(33, 37, 41);
+}
+
+
+.user-info-input{
+    border:none;
+    background-color: transparent;
+    outline: none;
+    width: 70%;
+    margin-left: 0.5vh;
+}
+
+
+
+.login-info-signin{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 1.5vh 0;
+    padding: 0 0.3vh;
+    font-size: 1vh;
+}
+
+.login-info-signin div{
+    padding:0 1vh;
+}
+
+.login-info-signin div:not(:last-child){
+    border-right: 1px solid black;
+}
+
+.login-info-signin-anchor{
+    color:black;
+    text-decoration: none;
+}
+.login-info-signin-anchor:after{
+    color: black;
+}
+.login-info-signin-anchor:hover{
+    color: black;
+}
+
+
+.long-btn{
+    color:white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5vh 2vh;
+    width: 100%;
+    text-align: center;
+}
+
+.input-right{
+    background-color: rgb(33, 37, 41);
+    color:white;
+    border : none;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 0.2vh 0.5vh;
+    float: right;
+
+}
+
+.select-box{
+    float: right;
+    border-radius: 5px;
+    padding: 0.2vh 0.4vh;
+    font-size: 13px;
+}
