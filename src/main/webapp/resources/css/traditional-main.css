@@ -1,3 +1,4 @@
+
 .login-header{
     display: flex;
     margin:10vh auto 3vh;
@@ -37,7 +38,6 @@
     width: 70%;
     margin-left: 0.5vh;
 }
-
 
 
 .login-info-signin{
@@ -90,8 +90,155 @@
 }
 
 .select-box{
-    float: right;
+    
     border-radius: 5px;
     padding: 0.2vh 0.4vh;
     font-size: 13px;
+}
+
+.float-right{
+    float: right;
+}
+
+.float-left{
+    float: left;
+}
+
+.mypage-container{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    max-width: 1280px;
+    margin: 1rem auto;
+    border:1px solid #e5e5e5;
+}
+
+.mypage-sidebar{
+    width: 220px;
+    margin: 0;
+    border-right:1px solid #e5e5e5;
+}
+
+.sidebar-grade{
+    background-color: #bbbfc3;
+    padding :0.5vh;
+    margin: 0;
+}
+
+.sidebar-grade li{
+    list-style: none;
+    padding:0.5rem 0.3rem;
+}
+
+.sidebar-nav{
+    padding: 0.5vh;
+    
+    
+}
+.sidebar-nav li{
+    list-style: none;
+    padding:1vh;
+    margin:0 1vh;
+}
+.sidebar-nav li:not(:last-child){
+    border-bottom: 1px solid #bbbfc3;
+}
+.sidebar-nav li a{
+    text-decoration: none;
+    color:black;
+}
+
+.mypage-content{
+    width: 100%;
+}
+
+.mypage-header{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 1vh 0;
+    background-color: rgb(248 249 250);
+    border-bottom:1px solid #e5e5e5;
+}
+
+.mypage-header div{
+    padding:1vh 2vh;
+}
+.mypage-header div a{
+    color:black;
+    text-decoration: none;
+}
+
+.mypage-header :nth-child(1){
+    flex-grow:1;
+}
+.mypage-header :not(:first-child){
+    border-left: 1px solid grey;
+}
+
+.mypage-content-detail{
+    border:1px solid #e5e5e5;
+    padding:1vh;
+    margin:1vh;
+}
+
+.warn-color{
+    background-color: red !important;
+    color:yellow !important;
+}
+
+/* 마이페이지 표 */
+.mypage-table{
+    width:100%;
+    border:1px solid #e5e5e5;
+    border-collapse: collapse;
+}
+.mypage-table tr th,td{
+    border: 1px solid #e5e5e5;
+    padding:1rem;
+}
+.mypage-table tr:nth-child(2n+1){
+    background-color: rgb(248 249 250);
+}
+
+.table-text-center{
+    text-align: center;
+}
+
+.first-row-text-center tr > :nth-child(1){
+    text-align: center;
+}
+
+.change-option-btn{
+    width: 7rem;
+    margin: 0 1rem;
+    border:none;
+    background-color: rgb(33, 37, 41);
+    color:white;
+    border-radius: 5px;
+}
+
+.review-textarea{
+    width: 100%;
+    border:none;
+    min-height: 200px;
+    resize:none;
+}
+.review-textarea:focus{
+    outline: none;
+}
+
+.bi-star{
+    color:gold;
+}
+.bi-star-fill{
+    color:gold;
+}
+
+td label{
+    color:grey;
+}
+
+td label:not(:first-child){
+    padding-left:  0.5rem;
 }
