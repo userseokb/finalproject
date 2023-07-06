@@ -12,8 +12,8 @@
      <!-- Bootstrap icons-->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
      <!-- Core theme CSS (includes Bootstrap)-->
-     <link href="css/styles.css" rel="stylesheet" />
-     <link href="css/traditional-main.css" rel="stylesheet" />
+     <link href="../resources/css/styles.css" rel="stylesheet" />
+     <link href="../resources/css/traditional-main.css" rel="stylesheet" />
 </head>
 <body>
     <%@ include file="mainNav.jsp" %>
@@ -21,6 +21,7 @@
     <main>
         <div class="main-container">
             <h4>FAQ</h4>
+            
             <table class="main-table">
                 <tr>
                     <th>No.</th>
@@ -28,11 +29,32 @@
                     <th>분류</th>
                 </tr>
                 <!-- c태그 반복영역 -->
+                <c:forEach items="${faq}" var="faq">
                 <tr>
-                    <td>0001</td>
-                    <td><a href="">마일리지 사용기한이 있나요?</a></td>
-                    <td>마일리지 적립</td>
+                    <td>${faq.faqNo}</td>
+                    <td><a href="faq/${faq.faqNo}">${faq.title}</a></td>
+                    
+                    <td>
+                    <c:choose>
+                    	<c:when test="${faq.state == 'A'}">
+                    	회원가입/정보
+                    	</c:when>
+                    	<c:when test="${faq.state == 'B'}">
+                    	결제/배송
+                    	</c:when>
+                    	<c:when test="${faq.state == 'C'}">
+                    	교환/환불/반품
+                    	</c:when>
+                    	<c:when test="${faq.state == 'D'}">
+                    	마일리지
+                    	</c:when>
+                    	<c:when test="${faq.state == 'E'}">
+                    	기타
+                    	</c:when>
+                    </c:choose>
+                    </td>
                 </tr>
+                </c:forEach>
                 <!-- 반복 종료 -->
             </table>
         </div>

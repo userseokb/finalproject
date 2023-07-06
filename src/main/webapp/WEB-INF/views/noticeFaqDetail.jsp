@@ -24,10 +24,6 @@
         <div class="main-container">
             <c:if test="${!empty notice}">
 			<h4>공지사항</h4>            
-            </c:if>
-            <c:if test="${!empty faq}">
-			<h4>FAQ</h4>            
-            </c:if>
             <table class="main-table">
                 <tr>
                     <th>제목</th>
@@ -41,6 +37,27 @@
                 <tr>
                     <td colspan="3">
                         ${notice.content}
+                     </td>
+                </tr>
+            </table>
+            </c:if>
+            
+            <c:if test="${!empty faq}">
+			<h4>FAQ</h4>            
+            </c:if>
+            <table class="main-table">
+                <tr>
+                    <th>제목</th>
+                    <td colspan="2">${faq.title}</td>
+                </tr>
+                <tr>
+                    <th>작성자 : 관리자</th>
+                    <th>작성일자 : ${faq.writeDate}</th>
+                    <th>조회수 : ${faq.kinds}</th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        ${faq.content}
                      </td>
                 </tr>
             </table>
