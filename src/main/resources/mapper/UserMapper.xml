@@ -30,5 +30,12 @@
  		WHERE user_no = #{userNo}
  	</select>
  	
+ 	 <select id="getUserByUserId" resultType="com.team2.finalproject.dto.user.UserDto">
+ 		SELECT user_no, user_grade, user_name, user_id, user_pw, email, birth, join_date, phone, 
+ 				tongsin, basic_addr, detail_addr, buy_sum, point, admin
+ 		FROM users
+ 		WHERE user_id = #{userId}
+ 	</select>
+ 	
  
  </mapper>

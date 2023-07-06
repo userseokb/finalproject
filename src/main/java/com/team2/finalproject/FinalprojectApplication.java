@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 
 
 @SpringBootApplication
-@EnableAutoConfiguration(exclude = {SecurityAutoConfiguration.class})
+//@EnableAutoConfiguration(exclude = {SecurityAutoConfiguration.class})
 public class FinalprojectApplication {
 
 	public static void main(String[] args) {

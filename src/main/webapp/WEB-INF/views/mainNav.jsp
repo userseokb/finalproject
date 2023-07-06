@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 		<!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
@@ -20,10 +22,19 @@
                             </ul>
                         </li>
                     </ul>
+                    <sec:authorize access="!isAuthenticated()">
                     <button class="btn btn-outline-dark" onclick="location.href='login'"> 
                         <i class="bi-person-circle"></i>
-                        로그인
+                       	 로그인
                     </button>
+                    </sec:authorize>
+                    <sec:authorize access="isAuthenticated()">
+                    <button class="btn btn-outline-dark" onclick="location.href='logout'"> 
+                        <i class="bi-person-circle"></i>
+                       	 로그아웃
+                    </button>
+                    </sec:authorize>
+                    
                 </div>
             </div>
         </nav>

@@ -19,6 +19,9 @@ public interface UserMapper {
 
 	public UserDto getUserByUserNo(int userNo);
 	
+	public UserDto getUserByUserId(String userId);
+	
+	
 	
 
 }
