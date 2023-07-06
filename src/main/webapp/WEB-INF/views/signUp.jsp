@@ -11,31 +11,31 @@
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
-    <link href="css/traditional-main.css" rel="stylesheet" />
+    <link href="../resources/css/styles.css" rel="stylesheet" />
+    <link href="../resources/css/traditional-main.css" rel="stylesheet" />
 </head>
 
 <body>
     <!-- logo  -->
     <div class="login-header">
         <a class="navbar-brand" href="index.html">
-            <img src="image/logo.png" alt="logo" width="200px">
+            <img src="../resources/image/logo.png" alt="logo" width="200px">
         </a>
     </div>
 
-    <form action="" method="post">
+    <form action="/signUp" method="post">
         <div class="content">
 
             <!-- id, pw, email -->
             <div class="input-wrap">
                 <div>
                     <i class="bi-person"></i>
-                    <input class="user-info-input" type="text" name="" id="userId" placeholder="아이디">
+                    <input class="user-info-input" type="text" name="userId" id="userId" placeholder="아이디">
                     <input class="input-right" type="button" value="중복확인">
                 </div>
                 <div>
                     <i class="bi-key"></i>
-                    <input class="user-info-input" type="password" id="userPw" placeholder="비밀번호">
+                    <input class="user-info-input" type="password" name="userPw" id="userPw" placeholder="비밀번호">
                 </div>
                 <div>
                     <i class="bi-check"></i>
@@ -55,16 +55,16 @@
             <div class="input-wrap">
                 <div>
                     <i class="bi-person"></i>
-                    <input class="user-info-input" type="text" placeholder="이름">
+                    <input class="user-info-input" type="text" name="userName" id="userName" placeholder="이름">
                 </div>
                 <div>
                     <i class="bi-calendar"></i>
-                    <input class="user-info-input" placeholder="생년월일[8자리]">
+                    <input class="user-info-input" name="birth" id="birth" placeholder="생년월일[8자리]">
                 </div>
                 <div>
                     <i class="bi-telephone"></i>
                     <input class="user-info-input" placeholder="전화번호">
-                        <select class="select-box float-right" name="" id="">
+                        <select class="select-box float-right" name="tongsin" id="tongsin">
                             <option value="" selected>선택</option>
                             <option value="SKT">SKT</option>
                             <option value="KT">KT</option>
@@ -73,16 +73,16 @@
                 </div>
                 <div>
                     <i class="bi-mailbox"></i>
-                    <input class="user-info-input" type="email" placeholder="[선택] 비밀번호 분실 시 확인용 이메일">
+                    <input class="user-info-input" type="email" name="email" id="email" placeholder="[선택] 비밀번호 분실 시 확인용 이메일">
                 </div>
                 <div>
                     <i class="bi-signpost"></i>
-                    <input class="user-info-input" type="text" placeholder="주소">
+                    <input class="user-info-input" type="text" name="basicAddr" placeholder="주소">
                     <input class="input-right" type="button" value="주소검색">
                 </div>
                 <div>
                     <i class="bi-signpost"></i>
-                    <input class="user-info-input" type="text" placeholder="상세주소">
+                    <input class="user-info-input" type="text" name="detailAddr" placeholder="상세주소">
                 </div>
             </div>
 
