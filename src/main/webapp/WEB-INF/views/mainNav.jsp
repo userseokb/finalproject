@@ -15,8 +15,8 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">고객센터</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">공지사항</a></li>
-                                <li><a class="dropdown-item" href="#!">FAQ</a></li>
+                                <li><a class="dropdown-item" href="/notice">공지사항</a></li>
+                                <li><a class="dropdown-item" href="/faq">FAQ</a></li>
                             </ul>
                         </li>
                     </ul>
