@@ -13,6 +13,27 @@
 		FROM product
 	</select>
    
+ 	<!-- getNoticeByPagination -->
+	<select id="getProductByPagination"
+			parameterType="com.team2.finalproject.dto.pagination.PageRequestDto" 
+			resultType="com.team2.finalproject.dto.product.ProductDto">
+		<![CDATA[
+			SELECT product_code, category_code, name, content, price, stock, rdate 
+			FROM (  SELECT product_code, category_code, name, content, price, stock, rdate, rownum rn
+			        FROM product
+			        WHERE rownum <= #{pageNum} * #{amount})
+			WHERE rn > (#{pageNum} - 1) *  #{amount}
+		]]>
+	</select>
+	
+	<select id="getTotalCount"
+			parameterType="com.team2.finalproject.dto.pagination.PageRequestDto" 
+			resultType="_int">
+		SELECT COUNT(product_code)
+		FROM product
+	</select>
+	
+	
     </mapper>
    
   

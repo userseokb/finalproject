@@ -20,10 +20,8 @@
         <%@ include file="mainNav.jsp" %>
         <%@ include file="mainHeader.jsp" %>
 
-        <!-- Section-->
-        <!--정렬 -->
-        <section class="py-5">
-
+		<div class="container">
+	<!-- https://getbootstrap.com/docs/5.3/components/list-group/ -->
             <div id="product_order_list" style="margin-right: 8em;">
                 <p align="right">
                 <a href="javascript:recentlist();">최신순</a>&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
@@ -48,7 +46,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">${product.name}</h5>
                                     <!-- Product price-->
-                                    ${product.price}
+                                   ₩${product.price}
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -60,29 +58,34 @@
                     </c:forEach>
                 </div>
             </div>
-            <!-- 페이지 네이션 -->
-            <nav aria-label="...">
-                <ul class="pagination justify-content-center">
-                  <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">이전</a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item active" aria-current="page">
-                    <a class="page-link" href="#">2</a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">4</a></li>
-                  <li class="page-item"><a class="page-link" href="#">5</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">다음</a>
-                  </li>
-                </ul>
-              </nav>
-        </section>
-		<%@ include file="mainFooter.jsp" %>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+			<!-- Paging -->
+			<!-- https://getbootstrap.com/docs/5.3/layout/columns/#alignment -->
+			<!-- https://getbootstrap.com/docs/5.3/components/pagination/#disabled-and-active-states -->
+ 			
+					<div>
+						<ul class="pagination justify-content-center">
+							<c:if test="${pageInfo.prev}">
+								<li class="page-item prev">
+									<a class="page-link" aria-label="Previous" 
+									href="/main?pageNum=${pageInfo.startPage - 1}&amount=${pageInfo.pageRequest.amount}">이전</a>
+								</li>
+							</c:if>
+							<c:forEach var="num" begin="${pageInfo.startPage}" end="${pageInfo.endPage}">
+								<li class="page-item ${pageInfo.pageRequest.pageNum == num ? "active" : "" } ">
+									<a class="page-link" 
+									href="/main?pageNum=${num}&amount=${pageInfo.pageRequest.amount}">${num}</a>
+								</li>
+							</c:forEach>
+							<c:if test="${pageInfo.next}">
+								<li class="page-item next">
+									<a class="page-link" aria-label="next" 
+									href="/main?pageNum=${pageInfo.endPage + 1}">다음</a>
+								</li>
+							</c:if>
+						</ul>
+					</div>
+				</div>
+			
+	
+</body>
 </html>
