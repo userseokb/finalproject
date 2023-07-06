@@ -36,4 +36,15 @@ public class MainController {
 			return "productdetail";
 		}
 	
+	@RequestMapping(value = "/adminLogin", method = RequestMethod.GET)
+	public String adminLogin() {
+			
+			return "adminLogin";
+		}
+	
+	@RequestMapping(value = "/adminSidebar", method = RequestMethod.GET)
+	public String adminSidebar() {
+			
+			return "adminSidebar";
+		}
 }
