@@ -31,5 +31,9 @@ public class UserService {
 	public UserDto getUserByUserNo(int userNo) {
 		return mapper.getUserByUserNo(userNo);
 	}
+	
+	public UserDto getUserByUserId(String userId) {
+		return mapper.getUserByUserId(userId);
+	}
 
 }
