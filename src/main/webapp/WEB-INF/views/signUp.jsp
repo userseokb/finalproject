@@ -64,7 +64,7 @@
                 </div>
                 <div>
                     <i class="bi-telephone"></i>
-                    <input class="user-info-input" placeholder="전화번호">
+                    <input class="user-info-input" name="phone" placeholder="전화번호">
                         <select class="select-box float-right" name="tongsin" id="tongsin">
                             <option value="" selected>선택</option>
                             <option value="SKT">SKT</option>

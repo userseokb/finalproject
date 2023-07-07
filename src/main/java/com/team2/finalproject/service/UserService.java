@@ -20,7 +20,7 @@ public class UserService {
 	}
 	
 	//insertUser
-	public int insertUser(UserDto newUser) {
+	public UserDto insertUser(UserDto newUser) {
 		return mapper.insertUser(newUser);
 	}
 

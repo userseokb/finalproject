@@ -33,7 +33,7 @@ public class UserController {
 	
 	//insertUser
 	@RequestMapping(value = "/signUp", method = RequestMethod.GET)
-	public String insertUserForm() {
+	public String signUpForm() {
 		
 		return "signUp";
 	}
@@ -44,8 +44,8 @@ public class UserController {
 		service.insertUser(newUser);
 		
 		System.out.println(newUser);
-		
-		return "main";
+				
+		return "redirect:login";
 	}
 	
 	//deleteUserByUserNo
@@ -66,21 +66,27 @@ public class UserController {
 		return "/personalInfomation/{userNo}";
 	}
 	
-//	//updateUser
-//	@RequestMapping(value = "/personalInfomation/{userNo}", method = RequestMethod.GET)
-//	public String updateUserForm(@PathVariable int userNo, Model model) {
-//		
-//		service.getUserByUserNo(userNo);
-//		
-//		return "/personalInfomation/{userNo}";
-//	}
-//	
-//	@RequestMapping(value = "/personalInfomation/{userNo}", method = RequestMethod.PUT)
-//	public String updateUser(@PathVariable int userNo,
-//							@ModelAttribute("") String dname,
-//							@ModelAttribute("") String loc) {
-//		
-//	}
+
 	
+	@RequestMapping(value = "/personalInfomation/{userNo}", method = RequestMethod.PUT)
+	public String updateUser(@PathVariable int userNo,
+							@ModelAttribute("email") String email,
+							@ModelAttribute("phone") int phone,
+							@ModelAttribute("tongsin") String tongsin,
+							@ModelAttribute("basicAddr") String basicAddr ,
+							@ModelAttribute("detailAddr") String detailAddr) {
+		
+		UserDto user = service.getUserByUserNo(userNo);
+		user.setEmail(email);
+		user.setPhone(phone);
+		user.setTongsin(tongsin);
+		user.setBasicAddr(basicAddr);
+		user.setDetailAddr(detailAddr);
+		
+		System.out.println();
+		
+		return "/personalInfomation/{userNo}";
+		
+	}
 	
 }
