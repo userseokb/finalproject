@@ -49,7 +49,7 @@ public class UserController {
 	}
 	
 	//deleteUserByUserNo
-	@RequestMapping(value = "/personalInfomation/{user_no}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/personalInfomation/{userNo}", method = RequestMethod.DELETE)
 	public String deleteUser(@PathVariable int userNo) {
 		
 		service.deleteUserByUserNo(userNo);
@@ -57,14 +57,30 @@ public class UserController {
 		return "main";
 	}
 	
-	//UserDetail
-	@RequestMapping(value = "/personalInfomation/{user_no}", method = RequestMethod.GET)
+	//userDetail
+	@RequestMapping(value = "/personalInfomation/{userNo}", method = RequestMethod.GET)
 	public String getUserByUserNo(@PathVariable int userNo, Model model) {
 		
 		service.getUserByUserNo(userNo);
 		
-		return "/personalInfomation/{user_no}";
+		return "/personalInfomation/{userNo}";
 	}
+	
+	//updateUser
+	@RequestMapping(value = "/personalInfomation/{userNo}", method = RequestMethod.GET)
+	public String updateUserForm(@PathVariable int userNo, Model model) {
+		
+		service.getUserByUserNo(userNo);
+		
+		return "/personalInfomation/{userNo}";
+	}
+	
+//	@RequestMapping(value = "/personalInfomation/{userNo}", method = RequestMethod.PUT)
+//	public String updateUser(@PathVariable int userNo,
+//							@ModelAttribute("") String dname,
+//							@ModelAttribute("") String loc) {
+//		
+//	}
 	
 	
 }
