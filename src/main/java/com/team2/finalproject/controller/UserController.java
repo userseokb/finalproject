@@ -66,15 +66,15 @@ public class UserController {
 		return "/personalInfomation/{userNo}";
 	}
 	
-	//updateUser
-	@RequestMapping(value = "/personalInfomation/{userNo}", method = RequestMethod.GET)
-	public String updateUserForm(@PathVariable int userNo, Model model) {
-		
-		service.getUserByUserNo(userNo);
-		
-		return "/personalInfomation/{userNo}";
-	}
-	
+//	//updateUser
+//	@RequestMapping(value = "/personalInfomation/{userNo}", method = RequestMethod.GET)
+//	public String updateUserForm(@PathVariable int userNo, Model model) {
+//		
+//		service.getUserByUserNo(userNo);
+//		
+//		return "/personalInfomation/{userNo}";
+//	}
+//	
 //	@RequestMapping(value = "/personalInfomation/{userNo}", method = RequestMethod.PUT)
 //	public String updateUser(@PathVariable int userNo,
 //							@ModelAttribute("") String dname,
