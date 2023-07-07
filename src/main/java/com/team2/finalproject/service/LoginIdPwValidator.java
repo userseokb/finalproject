@@ -32,7 +32,6 @@ public class LoginIdPwValidator implements UserDetailsService {
         if (user == null) {
             return null;
         }
-
         String pw = user.getUserPw(); 
         String admin = user.getAdmin(); //"Y or N"
 
