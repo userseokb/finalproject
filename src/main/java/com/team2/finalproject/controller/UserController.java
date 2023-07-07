@@ -66,6 +66,7 @@ public class UserController {
 		return "/personalInfomation/{userNo}";
 	}
 	
+
 	
 	@RequestMapping(value = "/personalInfomation/{userNo}", method = RequestMethod.PUT)
 	public String updateUser(@PathVariable int userNo,
@@ -87,6 +88,5 @@ public class UserController {
 		return "/personalInfomation/{userNo}";
 		
 	}
-	
 	
 }
