@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,7 +51,11 @@
                     <a class="login-info-signin-anchor" href="signin.html">회원가입</a>
                 </div>
             </div>
-
+			<span> 
+	    		<c:if test="${error}">
+	        		<p>${exception}</p>
+	    		</c:if>
+			</span>
 
             <input class="long-btn bg-dark" type="submit" value="로그인">
 

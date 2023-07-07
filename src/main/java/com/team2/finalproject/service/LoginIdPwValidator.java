@@ -24,14 +24,7 @@ public class LoginIdPwValidator implements UserDetailsService {
     private final UserMapper userMapper;
 
 	
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-    
-    public String encodeBcrypt(String planeText, int strength) {
-    	  return new BCryptPasswordEncoder(strength).encode(planeText);
-    }
+
     
 
     @Override
@@ -42,8 +35,9 @@ public class LoginIdPwValidator implements UserDetailsService {
         if (user == null) {
             return null;
         }
-        String pw = encodeBcrypt(user.getUserPw(), 10);
-//        String pw = user.getUserPw(); 
+        
+        
+        String pw = user.getUserPw(); 
         String admin = user.getAdmin(); //"Y or N"
 
         return User.builder()

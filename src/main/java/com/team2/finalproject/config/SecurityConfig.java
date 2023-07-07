@@ -1,11 +1,14 @@
 package com.team2.finalproject.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
@@ -20,14 +23,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	private final LoginIdPwValidator loginIdPwValidator;
 	
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+	
 	/* 로그인 실패 핸들러 의존성 주입 */
 	private final AuthenticationFailureHandler customFailureHandler;
 	
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+        .csrf().disable()
         .authorizeRequests()
-        	.antMatchers("/main**").permitAll()
+        	.antMatchers("/main**", "/signUp**", "/notice**").permitAll()
 //        	.antMatchers("/admin").hasRole("Y")
             .anyRequest().authenticated()
         .and()
@@ -35,7 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
             .loginPage("/login")
             .usernameParameter("id")
             .passwordParameter("pw")
-            .failureHandler(customFailureHandler) // 로그인 실패 핸들러
+//            .failureHandler(customFailureHandler) // 로그인 실패 핸들러
             .defaultSuccessUrl("/main", true)
             .permitAll()
         .and()
