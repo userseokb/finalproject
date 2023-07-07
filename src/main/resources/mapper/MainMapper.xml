@@ -26,6 +26,7 @@
 		]]>
 	</select>
 	
+	<!-- getTotalCount -->
 	<select id="getTotalCount"
 			parameterType="com.team2.finalproject.dto.pagination.PageRequestDto" 
 			resultType="_int">
@@ -33,7 +34,15 @@
 		FROM product
 	</select>
 	
-	
+	<!-- getProductByProductCode -->
+	<select id="getProductByProductCode"
+			resultType="com.team2.finalproject.dto.product.ProductDto">
+			
+		SELECT product_code, category_code, name, content, price, stock, rdate 
+		FROM product
+		WHERE product_code = #{product_code}
+	</select>
+   
     </mapper>
    
   

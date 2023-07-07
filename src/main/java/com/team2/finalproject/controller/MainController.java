@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -25,6 +26,7 @@ public class MainController {
 	
 	
 	private final MainMapper mainMapper;
+	private final MainService mainService;
 	
 	@GetMapping(value = "/main")
 	public String mainmethod(@ModelAttribute PageRequestDto pageRequest,
@@ -33,7 +35,7 @@ public class MainController {
 		log.info("all products = {}", result);
 		
 		int total = mainMapper.getTotalCount(pageRequest);
-		PageResponseDto pageResponse = new PageResponseDto(total, 10, pageRequest);
+		PageResponseDto pageResponse = new PageResponseDto(total, 5, pageRequest);
 		
 		model.addAttribute("products", result);
 		model.addAttribute("pageInfo", pageResponse);
@@ -41,9 +43,13 @@ public class MainController {
 	}
 	
 
-	@RequestMapping(value = "/productdetail", method = RequestMethod.GET)
-	public String productdetail() {
-			
+	@RequestMapping(value = "/productdetail/{productCode}", method = RequestMethod.GET)
+	public String productdetail(@PathVariable Integer productCode,
+								Model model) {
+		
+		ProductDto productDto = mainService.getProductByProductCode(productCode);
+		
+		model.addAttribute("products", productDto);
 			return "productdetail";
 		}
 	
