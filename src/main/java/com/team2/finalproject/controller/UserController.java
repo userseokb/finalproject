@@ -74,7 +74,7 @@ public class UserController {
 //		
 //		return "/personalInfomation/{userNo}";
 //	}
-	
+//	
 //	@RequestMapping(value = "/personalInfomation/{userNo}", method = RequestMethod.PUT)
 //	public String updateUser(@PathVariable int userNo,
 //							@ModelAttribute("") String dname,

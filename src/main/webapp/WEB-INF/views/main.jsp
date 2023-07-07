@@ -40,7 +40,7 @@
                              <!-- best badge-->
                              <div class="position-absolute"><img class="best-banner" src=../resources/image/gift.jpg style="width: 50px;height: 50px;" alt="..." /></div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="../resources/image/seoulsnight.png" alt="..." />
+                            <img class="card-img-top" src="../resources/image/productimage/${product.productCode}.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-3">
                                 <div class="text-left">
@@ -64,6 +64,7 @@
 			<!-- https://getbootstrap.com/docs/5.3/components/pagination/#disabled-and-active-states -->
  			
 					<div>
+						<nav class="page navigation">
 						<ul class="pagination justify-content-center">
 							<c:if test="${pageInfo.prev}">
 								<li class="page-item prev">
@@ -80,10 +81,11 @@
 							<c:if test="${pageInfo.next}">
 								<li class="page-item next">
 									<a class="page-link" aria-label="next" 
-									href="/main?pageNum=${pageInfo.endPage + 1}">다음</a>
+									href="/main?pageNum=${pageInfo.endPage + 1}&amount=${pageInfo.pageRequest.amount}">다음</a>
 								</li>
 							</c:if>
 						</ul>
+						</nav>
 					</div>
 				</div>
 			

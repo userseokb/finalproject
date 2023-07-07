@@ -36,7 +36,9 @@ public class PageResponseDto {
         	this.endPage = realEnd;
         }
 
+//      리스트의 첫 페이지번호가 1보다 크면 보이도록 합니다.
         this.prev = this.startPage > 1;
+//      realEnd변수를 구해서 리스트의 마지막 페이지 번호보다 크면 다음 버튼이 보이도록 합니다.
         this.next = this.endPage < realEnd;
 	}
 }
