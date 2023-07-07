@@ -18,12 +18,12 @@ public class SearchService {
 	@Autowired
 	MainMapper mainMapper;
 	
-	public List<ProductDto> getProductBySearchQuery(PageRequestDto pageRequest,String query) {
+	public List<ProductDto> getProductBySearchQuery(String qeury) {
 		List<ProductDto> searchList;
-		if(query == "" || query == null) {
+		if(qeury == "" || qeury == null) {
 			searchList = mainMapper.getAllProduct();
 		}else {
-			searchList = searchMapper.getSearchProductByPagination(pageRequest ,query);
+			searchList = searchMapper.getProductBySearchQuery(qeury);
 		}
 		return searchList;
 	}

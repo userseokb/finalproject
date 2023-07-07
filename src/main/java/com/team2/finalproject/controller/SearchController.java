@@ -29,16 +29,13 @@ public class SearchController {
 	MainMapper mainMapper;
 	
 	@RequestMapping(value="/search", method=RequestMethod.GET)
-	public String getProductBySearchQuery(@ModelAttribute PageRequestDto pageRequest,
-										HttpServletRequest request, Model model) {
-		String query = request.getParameter("query");
-		List<ProductDto> products =searchService.getProductBySearchQuery(pageRequest,query);
+	public String getProductBySearchKeyword(HttpServletRequest request, Model model) {
 		
-		int total = mainMapper.getTotalCount(pageRequest);
-		PageResponseDto pageResponse = new PageResponseDto(total, 10, pageRequest);
+		String query = request.getParameter("query");
+		List<ProductDto> products = searchService.getProductBySearchQuery(query);
+		
 		
 		model.addAttribute("products",products);
-		model.addAttribute("pageInfo", pageResponse);
 		
 		return "main";
 	}
