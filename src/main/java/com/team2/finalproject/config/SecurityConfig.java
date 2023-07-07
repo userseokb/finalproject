@@ -23,6 +23,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception {
         http
         .authorizeRequests()
+        	//("/main")안에 페이지는 로그인 없이 이동 가능
         	.antMatchers("/main").permitAll()
 //        	.antMatchers("/admin").hasRole("Y")
             .anyRequest().authenticated()
