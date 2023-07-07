@@ -22,9 +22,6 @@ import lombok.extern.slf4j.Slf4j;
 public class LoginIdPwValidator implements UserDetailsService {
 	
     private final UserMapper userMapper;
-
-	
-
     
 
     @Override
@@ -35,8 +32,6 @@ public class LoginIdPwValidator implements UserDetailsService {
         if (user == null) {
             return null;
         }
-        
-        
         String pw = user.getUserPw(); 
         String admin = user.getAdmin(); //"Y or N"
 

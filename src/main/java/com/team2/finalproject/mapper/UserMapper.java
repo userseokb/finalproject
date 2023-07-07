@@ -13,7 +13,7 @@ public interface UserMapper {
 	public List<UserDto> getAllUser();
 	
 	//insertUser
-	public int insertUser(UserDto newUser);
+	public UserDto insertUser(UserDto newUser);
 
 	public int deleteUserByUserNo(int userNo);
 

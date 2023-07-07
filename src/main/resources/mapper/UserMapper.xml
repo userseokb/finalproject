@@ -12,10 +12,10 @@
  	</select>
 
  	<select id="insertUser" resultType="com.team2.finalproject.dto.user.UserDto">
- 		INSERT INTO user (user_no, user_grade, user_name, user_id, user_pw, email, birth, join_date, 
- 							phone, tongsin, basic_addr, detail_addr, buy_sum, point, admin) 
- 		VALUES (#{userNo}, #{userGrade}, #{userName}, #{userId}, #{userPw}, #{email}, #{birth}, #{joinDate}, 
- 				#{phone}, #{tongsin}, #{basicAddr}, #{detailAddr}, #{buySum}, #{point}, #{admin}) 
+ 		INSERT INTO users (user_no, user_name, user_id, user_pw, email, birth, join_date, 
+ 							phone, tongsin, basic_addr, detail_addr) 
+ 		VALUES (user_no_seq.NEXTVAL, #{userName}, #{userId}, #{userPw}, #{email}, #{birth}, sysdate, 
+ 				#{phone}, #{tongsin}, #{basicAddr}, #{detailAddr}) 
  	</select>
  	
  	<select id="deleteUserByUserNo" resultType="com.team2.finalproject.dto.user.UserDto">
