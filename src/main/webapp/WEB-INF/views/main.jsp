@@ -64,6 +64,7 @@
 			<!-- https://getbootstrap.com/docs/5.3/components/pagination/#disabled-and-active-states -->
  			
 					<div>
+						<nav class="page navigation">
 						<ul class="pagination justify-content-center">
 							<c:if test="${pageInfo.prev}">
 								<li class="page-item prev">
@@ -80,10 +81,11 @@
 							<c:if test="${pageInfo.next}">
 								<li class="page-item next">
 									<a class="page-link" aria-label="next" 
-									href="/main?pageNum=${pageInfo.endPage + 1}">다음</a>
+									href="/main?pageNum=${pageInfo.endPage + 1}&amount=${pageInfo.pageRequest.amount}">다음</a>
 								</li>
 							</c:if>
 						</ul>
+						</nav>
 					</div>
 				</div>
 			
