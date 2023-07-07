@@ -6,6 +6,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.team2.finalproject.service.LoginIdPwValidator;
@@ -19,12 +20,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	private final LoginIdPwValidator loginIdPwValidator;
 	
+	/* 로그인 실패 핸들러 의존성 주입 */
+	private final AuthenticationFailureHandler customFailureHandler;
+	
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
         http
         .authorizeRequests()
-        	.antMatchers("/main","/main?pageNum=2&amount=12"
-        				,"main?pageNum=3&amount=12","main?pageNum=4&amount=12").permitAll()
+        	.antMatchers("/main**").permitAll()
 //        	.antMatchers("/admin").hasRole("Y")
             .anyRequest().authenticated()
         .and()
@@ -32,6 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
             .loginPage("/login")
             .usernameParameter("id")
             .passwordParameter("pw")
+            .failureHandler(customFailureHandler) // 로그인 실패 핸들러
             .defaultSuccessUrl("/main", true)
             .permitAll()
         .and()
