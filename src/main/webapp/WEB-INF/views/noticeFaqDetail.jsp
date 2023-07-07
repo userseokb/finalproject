@@ -44,7 +44,7 @@
             
             <c:if test="${!empty faq}">
 			<h4>FAQ</h4>            
-            </c:if>
+            
             <table class="main-table">
                 <tr>
                     <th>제목</th>
@@ -61,8 +61,9 @@
                      </td>
                 </tr>
             </table>
+            </c:if>
             <div>
-                <input type="button" value="목록으로" class="change-option-btn float-right" onclick="history.back()">
+                <input type="button" value="목록으로" class="change-option-btn float-right margin-top" onclick="history.back()">
             </div>
         </div>
     </main>
