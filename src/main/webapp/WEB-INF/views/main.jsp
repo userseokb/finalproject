@@ -40,7 +40,7 @@
                              <!-- best badge-->
                              <div class="position-absolute"><img class="best-banner" src=../resources/image/gift.jpg style="width: 50px;height: 50px;" alt="..." /></div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="../resources/image/seoulsnight.png" alt="..." />
+                            <img class="card-img-top" src="../resources/image/productimage/${product.productCode}.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-3">
                                 <div class="text-left">

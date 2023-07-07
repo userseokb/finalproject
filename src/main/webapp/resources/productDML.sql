@@ -68,30 +68,6 @@ product_code_seq.NEXTVAL
  ,0
  ,systimestamp);
  
-INSERT INTO product values (
-product_code_seq.NEXTVAL
- ,'A'
- ,'두루양조 용25 25도 375ml 전통주 증류소주 용소주'
- ,'용25 & 용41
- 좋은 술은 좋은 물에서부터 시작되기에 용소주 또한 깨끗한 스테인리스 관으로 끌어올린 청정 지하수를 사용합니다.
- 슐에 직접 열기를 가하지 않고 간접 가열하는 증류 방식 덕분에 탄내 없이 홍천 쌀의 달고 고소한 향이 단정하게 피어오릅니다.
- 알코올의 맵싸한 맛이 잠깐 스치다가 부드럽게 목을 타고 넘어가 깔끔한 마무리를 자랑합니다.'
- ,12000
- ,0
- ,systimestamp);
- 
-INSERT INTO product values (
-product_code_seq.NEXTVAL
- ,'A'
- ,'두루양조 용41 41도 375ml 전통주 증류소주 용소주'
- ,'용25 & 용41
- 좋은 술은 좋은 물에서부터 시작되기에 용소주 또한 깨끗한 스테인리스 관으로 끌어올린 청정 지하수를 사용합니다.
- 슐에 직접 열기를 가하지 않고 간접 가열하는 증류 방식 덕분에 탄내 없이 홍천 쌀의 달고 고소한 향이 단정하게 피어오릅니다.
- 알코올의 맵싸한 맛이 잠깐 스치다가 부드럽게 목을 타고 넘어가 깔끔한 마무리를 자랑합니다.'
- ,22000
- ,0
- ,systimestamp);
- 
   INSERT INTO product values (
 product_code_seq.NEXTVAL
  ,'A'
