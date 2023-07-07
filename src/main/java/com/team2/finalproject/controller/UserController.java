@@ -33,7 +33,7 @@ public class UserController {
 	
 	//insertUser
 	@RequestMapping(value = "/signUp", method = RequestMethod.GET)
-	public String insertUserForm() {
+	public String signUpForm() {
 		
 		return "signUp";
 	}
@@ -41,11 +41,11 @@ public class UserController {
 	@RequestMapping(value = "/signUp", method = RequestMethod.POST)
 	public String signUp(@ModelAttribute UserDto newUser, Model model) {
 		
-		UserDto addUser = service.insertUser(newUser);
+		service.insertUser(newUser);
 		
-		System.out.println(addUser);
+		System.out.println(newUser);
 				
-		return "redirect:main";
+		return "redirect:login";
 	}
 	
 	//deleteUserByUserNo

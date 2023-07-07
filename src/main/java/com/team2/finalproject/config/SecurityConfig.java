@@ -22,6 +22,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+        .csrf().disable()
         .authorizeRequests()
         	//("/main")안에 페이지는 로그인 없이 이동 가능
         	.antMatchers("/main**", "/signUp**").permitAll()
