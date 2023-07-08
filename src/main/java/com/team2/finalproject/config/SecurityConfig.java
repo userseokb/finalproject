@@ -39,7 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         http
         .csrf().disable()
         .authorizeRequests()
-        	.antMatchers("/main**", "/signUp**", "/notice**").permitAll()
+        	.antMatchers("/main**", "/signUp**", "/notice**", "/login**").permitAll()
 //        	.antMatchers("/admin").hasRole("Y")
             .anyRequest().authenticated()
         .and()
@@ -47,7 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
             .loginPage("/login")
             .usernameParameter("id")
             .passwordParameter("pw")
-//            .failureHandler(customFailureHandler) // 로그인 실패 핸들러
+            .failureHandler(customFailureHandler) // 로그인 실패 핸들러
             .defaultSuccessUrl("/main", true)
             .permitAll()
         .and()

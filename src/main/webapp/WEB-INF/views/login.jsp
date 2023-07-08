@@ -51,11 +51,11 @@
                     <a class="login-info-signin-anchor" href="/signUp">회원가입</a>
                 </div>
             </div>
-			<span> 
 	    		<c:if test="${error}">
-	        		<p>${exception}</p>
+	    		<script>
+					alert('${exception}');
+				</script>
 	    		</c:if>
-			</span>
 
             <input class="long-btn bg-dark" type="submit" value="로그인">
 
