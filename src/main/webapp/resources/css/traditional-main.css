@@ -351,13 +351,8 @@ td label:not(:first-child){
     align-items:center;
 }
 
-.search-input input[type="search"]{
+.search-input input{
     border:none;
     outline: none;
     background-color: transparent;
-}
-
-.search-button{
-    background-color: transparent;
-    border: none;
 }
