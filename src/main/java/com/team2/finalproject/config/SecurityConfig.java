@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.team2.finalproject.service.LoginIdPwValidator;
@@ -23,19 +24,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	private final LoginIdPwValidator loginIdPwValidator;
 	
-	@Bean
+
+    @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 	
+
+	/* 로그인 실패 핸들러 의존성 주입 */
+	private final AuthenticationFailureHandler customFailureHandler;
 
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
         http
         .csrf().disable()
         .authorizeRequests()
-        	//("/main")안에 페이지는 로그인 없이 이동 가능
-        	.antMatchers("/main**", "/signUp**").permitAll()
+        	.antMatchers("/main**", "/signUp**", "/notice**").permitAll()
 //        	.antMatchers("/admin").hasRole("Y")
             .anyRequest().authenticated()
         .and()
@@ -43,6 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
             .loginPage("/login")
             .usernameParameter("id")
             .passwordParameter("pw")
+//            .failureHandler(customFailureHandler) // 로그인 실패 핸들러
             .defaultSuccessUrl("/main", true)
             .permitAll()
         .and()

@@ -12,7 +12,9 @@ public interface MainMapper {
 	//전체 상품 가져오기
 	public List<ProductDto> getAllProduct();
 
-	public List<ProductDto> getProductByPagination(PageRequestDto pageRequest);
+	public ProductDto getProductByProductCode(Integer productCode);
 	
+	public List<ProductDto> getProductByPagination(PageRequestDto pageRequest);
+
 	public int getTotalCount(PageRequestDto pageRequest);
 }

@@ -19,5 +19,9 @@ public class MainService {
 		return mainMapper.getAllProduct();
 	}
 	
-
+	public ProductDto getProductByProductCode(Integer productCode) {
+		
+		ProductDto productDto = mainMapper.getProductByProductCode(productCode);
+		return productDto;
+	}
 }

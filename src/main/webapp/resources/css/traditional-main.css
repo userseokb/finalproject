@@ -261,6 +261,7 @@ td label:not(:first-child){
     width:100%;
     border:1px solid #e5e5e5;
     border-collapse: collapse;
+    margin: 1rem auto;
 }
 
 .main-table tr th,td{
@@ -339,4 +340,19 @@ td label:not(:first-child){
 
 .right-bottom{
     align-items: flex-end;
+}
+
+.search-input{
+    display: flex;
+    border:1px solid #bbbfc3;
+    margin-right: 2rem;
+    border-radius: 15px;
+    padding: 0 1rem;
+    align-items:center;
+}
+
+.search-input input{
+    border:none;
+    outline: none;
+    background-color: transparent;
 }

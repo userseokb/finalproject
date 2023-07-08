@@ -22,6 +22,16 @@
                             </ul>
                         </li>
                     </ul>
+                    <sec:authorize access="isAuthenticated()">
+                    <div class="search-input">
+                    	<form action="/search" method="get">
+                        <input type="search" name="query" placeholder="검색어를 입력하세요">
+                        <i class="bi-search"></i>
+                        <input type="submit">
+                        </form>
+                    </div>
+                    </sec:authorize>
+                    
                     <sec:authorize access="!isAuthenticated()">
                     <button class="btn btn-outline-dark" onclick="location.href='login'"> 
                         <i class="bi-person-circle"></i>
