@@ -2,6 +2,8 @@ package com.team2.finalproject.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -52,6 +54,21 @@ public class MainController {
 		model.addAttribute("products", productDto);
 			return "productdetail";
 		}
+	@RequestMapping(value = "/category/A")
+	public String category(@ModelAttribute PageRequestDto pageRequest,
+								Model model) {
+			List<ProductDto> result = mainMapper.getProductByCategoryCodeA(pageRequest);
+			log.info("all products = {}", result);
+
+			int total = mainMapper.getTotalCount(pageRequest);
+			PageResponseDto pageResponse = new PageResponseDto(total, 5, pageRequest);
+
+			model.addAttribute("products", result);
+			model.addAttribute("pageInfo", pageResponse);
+			return "category";
+		}
+	
+	
 	
 	@RequestMapping(value = "/adminLogin", method = RequestMethod.GET)
 	public String adminLogin() {
