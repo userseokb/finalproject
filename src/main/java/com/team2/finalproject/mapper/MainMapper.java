@@ -17,6 +17,4 @@ public interface MainMapper {
 	public List<ProductDto> getProductByPagination(PageRequestDto pageRequest);
 
 	public int getTotalCount(PageRequestDto pageRequest);
-	
-	public List<ProductDto> getProductByCategoryCodeA(PageRequestDto pageRequest);
 }

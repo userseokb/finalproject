@@ -35,25 +35,25 @@
             <!-- 상품 -->
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                	<c:forEach var="products" items="${products}">
+                	<c:forEach var="product" items="${products}">
                     <div class="col mb-5">
                         <div class="card h-100">
                              <!-- best badge-->
                              <div class="position-absolute"><img class="best-banner" src=../resources/image/gift.jpg style="width: 50px;height: 50px;" alt="..." /></div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="../resources/image/productimage/${products.productCode}.png" alt="..." />
+                            <img class="card-img-top" src="../resources/image/productimage/${product.productCode}.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-3">
                                 <div class="text-left">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">${products.name}</h5>
+                                    <h5 class="fw-bolder">${product.name}</h5>
                                     <!-- Product price-->
-                                   ₩${products.price}
+                                   ₩${product.price}
                                 </div>
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/productdetail/${products.productCode}">상세보기</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/productdetail/${product.productCode}">상세보기</a></div>
                             </div>
                         </div>
                     </div>

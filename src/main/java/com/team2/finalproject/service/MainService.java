@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.team2.finalproject.dto.pagination.PageRequestDto;
 import com.team2.finalproject.dto.product.ProductDto;
 import com.team2.finalproject.mapper.MainMapper;
 
@@ -24,10 +23,5 @@ public class MainService {
 		
 		ProductDto productDto = mainMapper.getProductByProductCode(productCode);
 		return productDto;
-	}
-	
-	public List<ProductDto> getProductByCategoryCodeA(PageRequestDto pageRequest) {
-		
-		return mainMapper.getProductByCategoryCodeA(pageRequest);
 	}
 }
