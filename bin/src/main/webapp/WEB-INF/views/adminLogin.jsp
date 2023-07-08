@@ -8,24 +8,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 로그인</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../resources/assets/favicon.ico" />
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
-    <link href="css/traditional-main.css" rel="stylesheet" />
+    <link href="../resources/css/styles.css" rel="stylesheet" />
+    <link href="../resources/css/traditional-main.css" rel="stylesheet" />
 </head>
 
 <body>
     <!-- logo  -->
     <div class="login-header">
         <a class="navbar-brand" href="index.html">
-            <img src="image/logo.png" alt="logo" width="200px">
+            <img src="../resources/image/logo.png" alt="logo" width="200px">
         </a>
     </div>
 
     <!-- login form -->
-    <form action="/login" method="post">
+    <form action="/adminLogin" method="post">
         <div class="content">
 
             <div class="input-wrap">
