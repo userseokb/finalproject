@@ -76,7 +76,7 @@
 							<c:forEach var="num" begin="${pageInfo.startPage}" end="${pageInfo.endPage}">
 								<li class="page-item ${pageInfo.pageRequest.pageNum == num ? "active" : "" } ">
 									<a class="page-link" 
-									href="/main?pageNum=${num}&amount=${pageInfo.pageRequest.amount}">${num}</a>
+									href="/category/A?pageNum=${num}&amount=${pageInfo.pageRequest.amount}">${num}</a>
 								</li>
 							</c:forEach>
 							<c:if test="${pageInfo.next}">

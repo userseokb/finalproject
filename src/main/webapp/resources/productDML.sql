@@ -1,3 +1,4 @@
+--  100000
 INSERT INTO product values (
 product_code_seq.NEXTVAL
  ,'A'
@@ -8,7 +9,8 @@ product_code_seq.NEXTVAL
  ,12900
  ,0
  ,systimestamp);
- 
+
+-- 100001
 INSERT INTO product values (
 product_code_seq.NEXTVAL
 ,'A'
@@ -20,6 +22,7 @@ product_code_seq.NEXTVAL
 ,0
 ,systimestamp);
 
+-- 100002
 INSERT INTO product values (
 product_code_seq.NEXTVAL
  ,'A'

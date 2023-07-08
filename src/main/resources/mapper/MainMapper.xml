@@ -43,6 +43,18 @@
 		WHERE product_code = #{product_code}
 	</select>
    
+   
+   <!-- getProductByCategoryCode -->
+   <select id="getProductByCategoryCodeA"
+   		   resultType="com.team2.finalproject.dto.product.ProductDto">
+   
+   		SELECT product_code, category_code, name, content, price, stock, rdate 
+		FROM product
+		WHERE category_code = 'A'
+   
+   
+   </select>
+   
     </mapper>
    
   
