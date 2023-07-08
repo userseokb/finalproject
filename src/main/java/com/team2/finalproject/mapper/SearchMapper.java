@@ -10,7 +10,8 @@ import com.team2.finalproject.dto.product.ProductDto;
 @Mapper
 public interface SearchMapper {
 
-	List<ProductDto> getProductBySearchQuery(String query);
-//	List<ProductDto> getSearchProductByPagination(PageRequestDto pageRequest);
+	List<ProductDto> getProductBySearchKeyword(PageRequestDto pageRequest);
+
+	int getSearchTotalCount(PageRequestDto pageRequest);
 
 }

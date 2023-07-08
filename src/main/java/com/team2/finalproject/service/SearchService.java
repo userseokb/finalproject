@@ -18,14 +18,21 @@ public class SearchService {
 	@Autowired
 	MainMapper mainMapper;
 	
-	public List<ProductDto> getProductBySearchQuery(String qeury) {
+//	검색단어(keyword) 페이지네이션된 상품 가져오기
+	public List<ProductDto> getProductBySearchKeyword(PageRequestDto pageRequest) {
 		List<ProductDto> searchList;
-		if(qeury == "" || qeury == null) {
-			searchList = mainMapper.getAllProduct();
+		if(pageRequest.getKeyword() == "" || pageRequest.getKeyword() == null) {
+			searchList = mainMapper.getProductByPagination(pageRequest);
 		}else {
-			searchList = searchMapper.getProductBySearchQuery(qeury);
+			searchList = searchMapper.getProductBySearchKeyword(pageRequest);
 		}
 		return searchList;
+	}
+
+//	검색단어로 검색한 상품 총 개수
+	public int getSearchTotalCount(PageRequestDto pageRequest) {
+		int total = searchMapper.getSearchTotalCount(pageRequest);
+		return total;
 	}
 
 }
