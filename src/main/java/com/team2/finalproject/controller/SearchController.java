@@ -24,20 +24,24 @@ public class SearchController {
 	@Autowired
 	SearchService searchService;
 	@Autowired
-	MainService MainService;
+	MainService mainService;
 	
 	MainMapper mainMapper;
 	
 	@RequestMapping(value="/search", method=RequestMethod.GET)
-	public String getProductBySearchKeyword(HttpServletRequest request, Model model) {
+	public String getProductBySearchKeyword(@ModelAttribute PageRequestDto pageRequest, Model model) {
 		
-		String query = request.getParameter("query");
-		List<ProductDto> products = searchService.getProductBySearchQuery(query);
+		List<ProductDto> result = searchService.getProductBySearchKeyword(pageRequest);
+		int total = searchService.getSearchTotalCount(pageRequest);
+		PageResponseDto pageResponse = new PageResponseDto(total, 5, pageRequest);
 		
+		System.out.println(total);
 		
-		model.addAttribute("products",products);
+		model.addAttribute("products",result);
+		model.addAttribute("searchInfo",pageResponse);
 		
 		return "main";
 	}
+	
 	
 }

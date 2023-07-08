@@ -64,6 +64,9 @@
 			<!-- https://getbootstrap.com/docs/5.3/layout/columns/#alignment -->
 			<!-- https://getbootstrap.com/docs/5.3/components/pagination/#disabled-and-active-states -->
  			
+ 			
+ 					<!-- 메인 페이지네이션 -->
+ 					<c:if test="${!empty pageInfo}">
 					<div>
 						<nav class="page navigation">
 						<ul class="pagination justify-content-center">
@@ -88,6 +91,37 @@
 						</ul>
 						</nav>
 					</div>
+					</c:if>
+					
+					
+					<!-- 검색 페이지네이션 -->
+					<c:if test="${!empty searchInfo}">
+					<div>
+						<nav class="page navigation">
+						<ul class="pagination justify-content-center">
+							<c:if test="${searchInfo.prev}">
+								<li class="page-item prev">
+									<a class="page-link" aria-label="Previous" 
+									href="/search?keyword=${searchInfo.pageRequest.keyword}&pageNum=${searchInfo.startPage - 1}&amount=${searchInfo.pageRequest.amount}">이전</a>
+								</li>
+							</c:if>
+							<c:forEach var="num" begin="${searchInfo.startPage}" end="${searchInfo.endPage}">
+								<li class="page-item ${searchInfo.pageRequest.pageNum == num ? "active" : "" } ">
+									<a class="page-link" 
+									href="/search?keyword=${searchInfo.pageRequest.keyword}&pageNum=${num}&amount=${searchInfo.pageRequest.amount}">${num}</a>
+								</li>
+							</c:forEach>
+							<c:if test="${searchInfo.next}">
+								<li class="page-item next">
+									<a class="page-link" aria-label="next" 
+									href="/search?keyword=${searchInfo.pageRequest.keyword}&pageNum=${searchInfo.endPage + 1}&amount=${searchInfo.pageRequest.amount}">다음</a>
+								</li>
+							</c:if>
+						</ul>
+						</nav>
+					</div>
+					</c:if>
+					
 				</div>
 			
     <!-- Bootstrap core JS-->

@@ -18,14 +18,19 @@ public class SearchService {
 	@Autowired
 	MainMapper mainMapper;
 	
-	public List<ProductDto> getProductBySearchQuery(String qeury) {
+	public List<ProductDto> getProductBySearchKeyword(PageRequestDto pageRequest) {
 		List<ProductDto> searchList;
-		if(qeury == "" || qeury == null) {
+		if(pageRequest.getKeyword() == "" || pageRequest.getKeyword() == null) {
 			searchList = mainMapper.getAllProduct();
 		}else {
-			searchList = searchMapper.getProductBySearchQuery(qeury);
+			searchList = searchMapper.getProductBySearchKeyword(pageRequest);
 		}
 		return searchList;
+	}
+
+	public int getSearchTotalCount(PageRequestDto pageRequest) {
+		int total = searchMapper.getSearchTotalCount(pageRequest);
+		return total;
 	}
 
 }
