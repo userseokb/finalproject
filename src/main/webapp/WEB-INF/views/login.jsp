@@ -20,7 +20,7 @@
 <body>
     <!-- logo  -->
     <div class="login-header">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="/main">
             <img src="/resources/image/logo.png" alt="logo" width="200px">
         </a>
     </div>
@@ -48,7 +48,7 @@
                     <a class="login-info-signin-anchor" href="">비밀번호찾기</a>
                 </div>
                 <div>
-                    <a class="login-info-signin-anchor" href="signin.html">회원가입</a>
+                    <a class="login-info-signin-anchor" href="/signUp">회원가입</a>
                 </div>
             </div>
 			<span> 
