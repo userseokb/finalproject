@@ -21,16 +21,19 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
+	
 	private final LoginIdPwValidator loginIdPwValidator;
 	
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 	
+
 	/* 로그인 실패 핸들러 의존성 주입 */
 	private final AuthenticationFailureHandler customFailureHandler;
-	
+
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
         http
